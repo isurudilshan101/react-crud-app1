@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
-import { render } from '@testing-library/react';
 
-export default Index extends Component{
+
+export default class Index extends Component{
     render(){
         return(
             <div>
