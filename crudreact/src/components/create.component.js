@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 
+
 export default class Create extends Component{
     render(){
         return(
@@ -8,22 +9,23 @@ export default class Create extends Component{
                     Add New Business
                 </h3>
                 <form>
-                    <div className="form-group">
+                    <div className='form-group'>
                         <label>Add Person Name :</label>
-                        <input type="text" className="form-control"/>
+                        <input type="text" className='form-control'/>
                      </div>
-
-                     <div className="form-group">
-                        <label>Add Person Name :</label>
-                        <input type="text" className="form-control"/>
+                     <div className='form-group'>
+                        <label>Add Business Name :</label>
+                        <input type="text" className='form-control'/>
                      </div>
-
                      <div className="form-group">
-                        <label>Add Person Name :</label>
-                        <input type="text" className="form-control"/>
+                        <label>Add NIC Number :</label>
+                        <input type="text" className='form-control'/>
+                     </div>
+                     <div className="form-group">
+                        <input type="submit" value='Register Business' className='btn btn-primary'/>
                      </div>
                 </form>
             </div>
         );
-    }
+     }
 }
