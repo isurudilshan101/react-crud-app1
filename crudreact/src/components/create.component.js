@@ -1,7 +1,56 @@
 import React,{Component} from 'react';
 
 
-export default class Create extends Component{
+ class Create extends Component{
+
+        constructor(props){
+        super(props);
+
+        this.onChangePersonName= this.onChangePersonName.bind(this);
+        this.onChangeBusinessName=this.onChangeBusinessName.bind(this);
+        this.onChanegeNICNumber=this.onChanegeNICNumber.bind(this);
+        this.onSubmit=this.onSubmit.bind(this);
+
+        this.state= {
+            person_name:'',
+            business_name:'',
+            busines_nic_number:''
+        } 
+
+    }
+
+    onChangePersonName(e){
+        this.setState({
+            person_name:e.target.value
+        });
+    }
+
+    onChangeBusinessName(e){
+        this.setState({
+            business_name:e.target.value
+        });
+    }
+
+    onChanegeNICNumber(e){
+        this.setState({
+            busines_nic_number:e.target.value
+        });
+    }
+
+    onSubmit(e){
+        e.preventDefault();
+        console.log(`the values are ${this.state.person_name}, ${this.state.business_name}, and ${this.state.busines_nic_number}`)
+        this.setState({
+            person_name:'',
+            business_name:'',
+            busines_nic_number:''
+        })
+    }
+
+  
+
+
+
     render(){
         return(
             <div style={{marginTop:10}}>
@@ -29,3 +78,5 @@ export default class Create extends Component{
         );
      }
 }
+
+export default Create
