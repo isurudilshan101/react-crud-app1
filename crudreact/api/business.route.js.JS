@@ -17,4 +17,19 @@ businessRoutes.route('/add').post(function(re,res){
 });
 
 //get data
+businessRoutes.route('/').get(function(req,res){
+    Business.find(function(err,business){
+        if(err)
+        console.log(err);
+        else{res.json(business)};
+    });
+});
+
+//edit
+businessRoutes.route('/edit/:id').get(function(req,res){
+    let id=req.params.id;
+    Business.findById(function(err,business){
+        res.json(business);
+    });
+});
 
