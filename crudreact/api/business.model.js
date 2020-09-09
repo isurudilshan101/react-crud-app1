@@ -12,4 +12,8 @@ let Business=new Schema({
     person_nic_number:{
         type:Number
     }
-})
+},{
+    collection:'business'
+});
+
+module exports=mongoose.model('Busines', Business);
