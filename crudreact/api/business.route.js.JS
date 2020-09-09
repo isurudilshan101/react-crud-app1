@@ -45,9 +45,22 @@ businessRoutes.route('/update/:id').post(function(req,res){
 
             business.save().then(business=>{
                 res.json('Update Complete');
+            })
+            .catch(err=>{
+                res.state(400).send("unable to update database");
             });
         }
     });
 });
 
 
+//delete data
+
+businessRoutes.route('/dalete/:id').get(function(req,res){
+    business.findByIdAndRemove({id:req.params.id},function(err,business){
+        if(err)res.json(err);
+        else res.json("Successfully removed");
+    });
+});
+
+module.exports=businessRoutes;
