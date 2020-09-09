@@ -57,18 +57,30 @@ import React,{Component} from 'react';
                 <h3> 
                     Add New Business
                 </h3>
-                <form>
+                <form onSubmit={this.onSubmit}>
                     <div className='form-group'>
                         <label>Add Person Name :</label>
-                        <input type="text" className='form-control'/>
+                        <input 
+                            type="text" 
+                            className="form-control" 
+                            value={this.state.person_name}
+                            onChange={this.state.onChangePersonName} />
                      </div>
+
                      <div className='form-group'>
                         <label>Add Business Name :</label>
-                        <input type="text" className='form-control'/>
+                        <input type="text" 
+                                className='form-control'
+                                value={this.state.business_name}
+                                onChange={this.state.onChangeBusinessName}/>
                      </div>
+
                      <div className="form-group">
                         <label>Add NIC Number :</label>
-                        <input type="text" className='form-control'/>
+                        <input type="text"
+                                className='form-control'
+                                value={this.state.busines_nic_number}
+                                onChange={this.state.onChanegeNICNumber}/>
                      </div>
                      <div className="form-group">
                         <input type="submit" value='Register Business' className='btn btn-primary'/>
