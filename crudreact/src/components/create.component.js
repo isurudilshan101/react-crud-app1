@@ -49,7 +49,7 @@ import axios from 'axios';
           business_nic_number:this.state.business_nic_number
 
       };
-      
+
       axios.post('http://localhost:4000/business/add',obj).then(res=>console.log(res.data));
    
       this.setState({
