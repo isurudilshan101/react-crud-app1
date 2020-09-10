@@ -1,7 +1,7 @@
 const express =require('express');
 const app=express();
 const bodyParser=require('body-parser');
-const PORT=4000;
+const PORT=4001;
 const cors=require('cors');
 
 const mongoose=require('mongoose');
@@ -25,6 +25,7 @@ app.use(bodyParser.json());
 
 app.use('/business',businessRoute);
 
+//const port=process.env.PORT||4001;
 app.listen(PORT,function(){
     console.log(`Server is running ${PORT}` );
 });
