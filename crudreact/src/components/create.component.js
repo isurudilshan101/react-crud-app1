@@ -8,17 +8,19 @@ import axios from 'axios';
         constructor(props){
         super(props);
 
+        this.state={
+            person_name:'',
+            business_name:'',
+            busines_nic_number:''
+        }
+
+
         this.onChangePersonName= this.onChangePersonName.bind(this);
         this.onChangeBusinessName=this.onChangeBusinessName.bind(this);
         this.onChanegeNICNumber=this.onChanegeNICNumber.bind(this);
         this.onSubmit=this.onSubmit.bind(this);
 
-        this.state= {
-            person_name:'',
-            business_name:'',
-            busines_nic_number:''
-        } 
-
+       
     }
 
     onChangePersonName(e){
@@ -44,11 +46,13 @@ import axios from 'axios';
       const obj={
           person_name:this.state.person_name,
           business_name:this.state.business_name,
-          business_nic_number:this.state. business_nic_number
+          business_nic_number:this.state.business_nic_number
+
       };
+      
       axios.post('http://localhost:4000/business/add',obj).then(res=>console.log(res.data));
    
-      this.state({
+      this.setState({
         person_name:'',
         business_name:'',
         business_nic_number:''
@@ -70,7 +74,7 @@ import axios from 'axios';
                             type="text" 
                             className="form-control" 
                             value={this.state.person_name}
-                            onChange={this.state.onChangePersonName} />
+                            onChange={this.onChangePersonName} />
                      </div>
 
                      <div className='form-group'>
@@ -78,7 +82,7 @@ import axios from 'axios';
                         <input type="text" 
                                 className='form-control'
                                 value={this.state.business_name}
-                                onChange={this.state.onChangeBusinessName}/>
+                                onChange={this.onChangeBusinessName}/>
                      </div>
 
                      <div className="form-group">
@@ -86,7 +90,7 @@ import axios from 'axios';
                         <input type="text"
                                 className='form-control'
                                 value={this.state.busines_nic_number}
-                                onChange={this.state.onChanegeNICNumber}/>
+                                onChange={this.onChanegeNICNumber}/>
                      </div>
                      <div className="form-group">
                         <input type="submit" value='Register Business' className='btn btn-primary'/>
