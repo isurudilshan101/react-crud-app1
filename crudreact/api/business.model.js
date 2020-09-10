@@ -16,4 +16,4 @@ let Business=new Schema({
     collection:'business'
 });
 
-module exports=mongoose.model('Busines', Business);
+module exports=mongoose.model('Business', Business);

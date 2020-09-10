@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 
-import axios from('axios');
+import axios from 'axios';
 
 
  class Create extends Component{
@@ -43,8 +43,8 @@ import axios from('axios');
         e.preventDefault();
       const obj={
           person_name:this.state.person_name,
-          business_name=this.state.business_name,
-          business_nic_number=this.state. business_nic_number
+          business_name:this.state.business_name,
+          business_nic_number:this.state. business_nic_number
       };
       axios.post('http://localhost:4000/business/add',obj).then(res=>console.log(res.data));
    
