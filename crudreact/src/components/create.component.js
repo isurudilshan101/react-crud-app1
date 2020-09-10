@@ -1,5 +1,7 @@
 import React,{Component} from 'react';
 
+import axios from('axios');
+
 
  class Create extends Component{
 
@@ -39,17 +41,21 @@ import React,{Component} from 'react';
 
     onSubmit(e){
         e.preventDefault();
-        console.log(`the values are ${this.state.person_name}, ${this.state.business_name}, and ${this.state.busines_nic_number}`)
-        this.setState({
-            person_name:'',
-            business_name:'',
-            busines_nic_number:''
-        })
+      const obj={
+          person_name:this.state.person_name,
+          business_name=this.state.business_name,
+          business_nic_number=this.state. business_nic_number
+      };
+      axios.post('http://localhost:4000/business/add',obj).then(res=>console.log(res.data));
+   
+      this.state({
+        person_name:'',
+        business_name:'',
+        business_nic_number:''
+      });
     }
 
   
-
-
 
     render(){
         return(
