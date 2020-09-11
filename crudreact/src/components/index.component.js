@@ -47,7 +47,7 @@ export default class Index extends Component{
                 </table>
 
             </div>
-          )
+          );
         }
     
 }
