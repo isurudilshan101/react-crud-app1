@@ -17,14 +17,21 @@ export default class Index extends Component{
         })
         .catch(function(error){
                 console.log(error)
-        });
+        })
+    }
 
-    render(){
+    tabRow(){
+            return this.state.business.map(function(object,i){
+                return <TableRow obj={object} key={i}/>
+            });
+    }
+
+    render()  {
         return(
             <div>
-                Welcome to Index Component
+              
             </div>
-        )
-    }
-}
+          )
+        }
+    
 }
