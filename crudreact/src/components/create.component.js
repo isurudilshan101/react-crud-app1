@@ -37,7 +37,7 @@ import axios from 'axios';
 
     onChanegeNICNumber(e){
         this.setState({
-            busines_nic_number:e.target.value
+            business_nic_number:e.target.value
         });
     }
 
@@ -89,7 +89,7 @@ import axios from 'axios';
                         <label>Add NIC Number :</label>
                         <input type="text"
                                 className='form-control'
-                                value={this.state.busines_nic_number}
+                                value={this.state.business_nic_number}
                                 onChange={this.onChanegeNICNumber}/>
                      </div>
                      <div className="form-group">
