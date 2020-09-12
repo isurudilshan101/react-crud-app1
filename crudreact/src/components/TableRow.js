@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import {Link } from 'react-router-dom';
 
 class TableRow extends Component{
 
@@ -18,7 +19,7 @@ class TableRow extends Component{
                 </td>
 
                 <td>
-                    <button className="btn btn-primary">Edit</button>
+                   <Link to={"/edit/"+this.props.obj._id} className="btn btn-primary">Edit </Link>
                 </td>
 
                 <td>
